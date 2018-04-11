@@ -21,5 +21,16 @@ namespace WindowsFormsApplication2
             dbContext.Product.Load();
             productBindingSource.DataSource = dbContext.Product.Local.ToBindingList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Product obj = productBindingSource.Current as Product;
+            using (Form2 frm = new WindowsFormsApplication2.Form2(obj))
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            
+        }
     }
 }
